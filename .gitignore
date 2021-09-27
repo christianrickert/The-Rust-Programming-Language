@@ -1,5 +1,4 @@
 *.exe
 *.swp
 *.pdb
-*.o
-*.lock
+".o
