@@ -1,4 +1,3 @@
 *.exe
 *.swp
-*.pdb
-*.o
+target
