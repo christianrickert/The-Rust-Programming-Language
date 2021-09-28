@@ -1,4 +1,4 @@
 *.exe
 *.swp
 *.pdb
-".o
+*.o
