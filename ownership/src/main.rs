@@ -1,14 +1,9 @@
 fn main() {
+   let mut s = String::from("hello");
 
-    let s1 = String::from("hello");     
-
-    let (s2, len) = calculate_length(s1);  // deconstruction assignment
-
-    println!("The length of '{}' is {}.", s2, len);
+   change(&mut s);
 }
 
-fn calculate_length(s: String) -> (String, usize) {
-    let length = s.len();   // len() returns the length of a String
-
-    (s, length)  // tuple
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
 }
