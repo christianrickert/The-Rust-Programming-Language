@@ -5,13 +5,18 @@ struct User {
     active: bool,
 }
 
-fn main() {
-    let mut user1 = User {
-        email: String::from("someone@example.com"),
-        username: String::from("someusername1234"),
+fn build_user(email: String, username: String) -> User {
+    User {
+        email: email,
+        username: username,
         active: true,
         sign_in_count: 1,
-    };
+    }
+}
 
-    user1.email = String::from("anotheremail@examplecom");
+fn main() {
+    let user1 = build_user(
+        String::from("someone@example.com"),
+        String::from("someusername123"),
+    );
 }
