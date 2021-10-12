@@ -1,5 +1,10 @@
 fn main() {
-    println!("Hello, world!");
+    let user1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("someusername1234"),
+        active: true,
+        sign_in_count: 1,
+    };
 }
 
 struct User {
