@@ -15,9 +15,15 @@ fn main() {
         height: 30,
         width: 50,
     };
+    let rect2 = Rectangle {
+        height: 10,
+        width: 40,
+    };
+    let rect3 = Rectangle {
+        height: 60,
+        width: 45,
+    };
 
-    println!(
-        "The area of the rectangle is {} square pixels.",
-        rect1.area()
-    );
+    println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
+    println!("Can rect2 hold rect3? {}", rect1.can_hold(&rect3));
 }
