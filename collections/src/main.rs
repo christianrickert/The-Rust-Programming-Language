@@ -1,8 +1,11 @@
 fn main() {
-    let mut v = Vec::new();
-    // do stuff with v
-    v.push(5);
-    v.push(6);
-    v.push(7);
-    v.push(8);
-} // <- v goes out of scope and is freed here
+    let v = vec![1, 2, 3, 4, 5];
+
+    let third: &i32 = &v[2];
+    println!("The third element is {}", third);
+
+    match v.get(2) {
+        Some(third) => println!("The third element is {}", third),
+        None => println!("There's no third element."),
+    }
+}
