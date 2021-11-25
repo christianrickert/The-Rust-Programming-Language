@@ -1,4 +1,8 @@
 fn main() {
-    let s1 = String::from("hello");
-    let h = s1[0];
+    use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
 }
