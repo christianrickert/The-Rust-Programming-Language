@@ -1,20 +1,24 @@
-#![allow(unused)]
-fn main() {
-    pub struct Guess {
-        value: i32,
-    }
+fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
+    let mut largest = list[0];
 
-    impl Guess {
-        pub fn new(value: i32) -> Guess {
-            if value < 1 || value > 100 {
-                panic!("Guess value must be between 1 and 100, got {}", value);
-            }
-
-            Guess { value }
-        }
-
-        pub fn value(&self) -> i32 {
-            self.value
+    for &item in list {
+        if item > largest {
+            largest = item;
         }
     }
+
+    largest
 }
+
+fn main() {
+    let number_list = vec![34, 50, 25, 100, 65];
+
+    let result = largest(&number_list);
+    println!("The largest number is {}", result);
+
+    let char_list = vec!['y', 'm', 'a', 'q'];
+
+    let result = largest(&char_list);
+    println!("The largest char is {}", result);
+}
+
