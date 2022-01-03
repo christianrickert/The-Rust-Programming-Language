@@ -13,11 +13,7 @@ fn main() {
         fs::read_to_string(config.filename).expect("Something went wrong reading the file");
 
     println!("With text:\n{}", contents);
-
-    // --snip--
 }
-
-// -- snip --
 
 struct Config {
     query: String,
@@ -25,13 +21,14 @@ struct Config {
 }
 
 impl Config {
-    fn new(args: &[String]) -> Config {
+    fn new(args: &[String]) -> Result<Config, &str> {
         if args.len() < 3 {
-            panic!("not enough arguments");
+            return Err("not enough arguments");
         }
+
         let query = args[1].clone();
         let filename = args[2].clone();
 
-        Config { query, filename }
+        Ok(Config { query, filename })
     }
 }
