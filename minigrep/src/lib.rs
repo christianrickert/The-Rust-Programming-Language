@@ -1,6 +1,4 @@
 use std::env;
-// --snip--
-
 use std::error::Error;
 use std::fs;
 
@@ -11,7 +9,8 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &str> {
+    pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
+        // --snip--
         if args.len() < 3 {
             return Err("not enough arguments");
         }
