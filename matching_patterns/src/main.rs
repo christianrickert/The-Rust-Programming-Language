@@ -1,9 +1,9 @@
 fn main() {
-    let numbers = (2, 4, 8, 16, 32);
+    let s = Some(String::from("Hello!"));
 
-    match numbers {
-        (first, _, third, _, fifth) => {
-            println!("Some numbers: {}, {}, {}", first, third, fifth)
-        }
+    if let Some(_) = s {
+        println!("found a string");
     }
+
+    println!("{:?}", s);
 }
