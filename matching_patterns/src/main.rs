@@ -1,9 +1,9 @@
 fn main() {
-    let numbers = (2, 4, 8, 16, 32);
+    let num = Some(4);
 
-    match numbers {
-        (first, .., last) => {
-            println!("Some numbers: {}, {}", first, last);
-        }
+    match num {
+        Some(x) if x < 5 => println!("less than five: {}", x),
+        Some(x) => println!("{}", x),
+        None => (),
     }
 }
