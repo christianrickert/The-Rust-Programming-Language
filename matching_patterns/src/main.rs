@@ -1,13 +1,10 @@
 fn main() {
-    let (x, y, z) = (1, 2, 3);
-
-    fn foo(x: i32) {
-        // code goes here
+    let some_option_value: Option<i32> = None;
+    if let Some(x) = some_option_value {
+        println!("{}", x);
     }
 
-    fn print_coordinates(&(x, y): &(i32, i32)) {
-        println!("Current location: ({}, {})", x, y);
+    if let x = 5 {
+        println!("{}", x);
     }
-    let point = (3, 5);
-    print_coordinates(&point);
 }
